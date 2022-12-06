@@ -1,0 +1,33 @@
+﻿@model TravelWebsite.Models.Classes.Comment
+@{
+    ViewBag.Title = "ReturnComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update Comment</h2>
+<br />
+
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(x => x.UserName)
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.CommentDetailed)
+    @Html.TextBoxFor(x => x.CommentDetailed, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Blog.Title)
+    @Html.TextAreaFor(x => x.Blog.Title, 15, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Update Comment</button>
+}

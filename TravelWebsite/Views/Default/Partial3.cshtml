@@ -1,0 +1,17 @@
+﻿@using TravelWebsite.Models.Classes
+@model List<Blog>
+
+<div class="padding">
+    <h4>The most famous 10 Blogs</h4>
+    <ul class="list list-pad">
+
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+            <li class="list-bg"><span>@{i++;} @i.</span><a href="/Blog/BlogDescription/@item.ID">@item.Title</a></li>
+
+        }
+
+    </ul>
+    <a href="/Blog/Index" class="link1">See all blogs</a>
+</div>
